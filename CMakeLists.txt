@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.10.2)
 
 # Set the project name to your project name, template isn't very descriptive
-project (TFE22-2)
+project (TEA21)
 
 # Conditionally turn on/off parts of the build (global-level)
 option(BUILD_TESTS "Build unit tests" ON)
@@ -61,9 +61,6 @@ include(cmake/Doxygen.cmake)
 
 # Exercises & solutions
 add_subdirectory(exercise-001)
-add_subdirectory(exercise-002)
-add_subdirectory(exercise-003)
-
 # templates
 add_subdirectory(templates)
 

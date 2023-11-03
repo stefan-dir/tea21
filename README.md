@@ -1,6 +1,6 @@
-# Informatik 3
+# Mikrocomputertechnik 3
 
-Begleitprojekt für Informatik 3 im Kurs TFE22-2 an der DHBW Ravensburg Campus Friedrichshafen
+Begleitprojekt für Mikrocomputertechnik 3 im Kurs TEA21 an der DHBW Ravensburg Campus Friedrichshafen
 
 **WICHTIG** Bitte verwenden sie zur Entwicklung die vorgefertigten Umgebungen.
 
@@ -12,7 +12,7 @@ Begleitprojekt für Informatik 3 im Kurs TFE22-2 an der DHBW Ravensburg Campus F
 
 Es wird davon ausgegangen, dass Sie einen Fork angelegt haben und von diesen geklont haben. Damit entspricht Ihr Fork der Bezeichnung ``origin``. Siehe hierzu auch die [Hinweise in der ersten Übungsaufgabe](exercise-001#upstream-hinzuf%C3%BCgen).
 
-Um die aktuellen Änderungen in die lokale Kopie des ``tfe22-2`` Repository zu übertragen sollten Sie zunächst ein ``git fetch`` durchführen
+Um die aktuellen Änderungen in die lokale Kopie des ``tea21`` Repository zu übertragen sollten Sie zunächst ein ``git fetch`` durchführen
 
 ```sh
 git fetch upstream
