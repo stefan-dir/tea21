@@ -25,6 +25,8 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", "hah");
 
-    fmt::print("Value of Variable bss {} adress of variable bss {}\n", foo, fmt::ptr(&foo));
+    fmt::print("Value of Variable bss {} address of variable bss {}\n", foo, fmt::ptr(&foo));
+    fmt::print("Value of Variable data {} address of variable bss {}\n", data, fmt::ptr(&data));
+    fmt::print("Value of Variable rodata {} address of variable rodata {}\n", rodata, fmt::ptr(&rodata));
     return 0; /* exit gracefully*/
 }
