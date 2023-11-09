@@ -17,7 +17,7 @@ Aller Anfang ist schwer. Um sich das Leben nicht unnötig schwer zu machen sollt
 Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des Branches für die erste Übungsaufgabe.
 
 ```
-git checkout -b solution-001 upstream/excercise-003
+git checkout -b solution-001 upstream/main
 ```
 
 Sie können mit dem Kommando ``git branch -a`` prüfen ob dies erfolgreich war:
@@ -35,12 +35,12 @@ Damit Sie nicht aus versehen in das falsche Repository pushen müssen Sie git mi
 git push -u origin solution-001
 ```
 
-Nun haben Sie den branch ``excercise-003`` aus meinem Repository in Ihren Fork übertragen.
+Nun haben Sie den branch `main` aus meinem Repository in Ihren Fork übertragen.
 
 
 ## Der erste Commit
 
-Um den ``git Workflow`` zu testen korrigieren Sie zunächst den [Schreibfehler in Zeile 11](exercise-001/main.cpp#L11).
+Um den ``git Workflow`` zu testen korrigieren Sie zunächst den [Schreibfehler in Zeile 11](exercise-002/main.cpp#L11).
 
 ### Änderungen in den Staging Bereich aufnehmen
 
