@@ -40,7 +40,10 @@ auto main(int argc, char **argv) -> int
     for (auto& i : data){
         i = std::rand() % 101;
     }
-    fmt::print("Content of data: [{}]",fmt::join(data,", "));
+    fmt::print("Content of data: [{}]\n",fmt::join(data,", "));
+
+    std::sort(data.begin(), data.end());
+    fmt::print("sorted data: [{}]\n",fmt::join(data,", "));
 
     return 0; /* exit gracefully*/
 }
