@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
@@ -24,8 +25,8 @@ auto main(int argc, char **argv) -> int
     }
 
     std::vector<int> data(counter);
-    fmt::print("counter param: {}", counter);
-    fmt::print("created a vector with...{}", sizeof(data));
+    fmt::print("counter param: {}\n", counter);
+    fmt::print("created a vector with size of counter: {}\n", data.size());
 
 
     /**
@@ -36,9 +37,10 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
-   
-   
+    for (auto& i : data){
+        i = std::rand() % 101;
+    }
+    fmt::print("Content of data: [{}]",fmt::join(data,", "));
 
-   
     return 0; /* exit gracefully*/
 }
