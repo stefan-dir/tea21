@@ -11,6 +11,7 @@ struct LinkedListNode
   LinkedListNode(const std::string &name)
     : m_name(name), pNext(nullptr)
   {
+
   }
   LinkedListNode()
     : LinkedListNode("")
@@ -20,7 +21,7 @@ struct LinkedListNode
   {
     fmt::print("    -> Killing {}\n", m_name);
   }
-  /*Print the Name*/
+  /* Print the Name */
   void print()
   {
     fmt::print("My Name is {}\n", m_name);
@@ -48,16 +49,16 @@ public:
   bool insert_head(LinkedListNode *node);
 
   /**
-   * Insert an elmenet after a given location
+   * Insert an element after a given location
    *
-   * loc the elment after we want to insert the node
+   * loc the element after we want to insert the node
    */
   bool insert_after(LinkedListNode *loc, LinkedListNode *node);
 
   /**
-   * Insert an elmenet before a given location
+   * Insert an element before a given location
    *
-   * loc the elment we want to insert the node in foront of
+   * loc the element we want to insert the node in foront of
    */
   bool insert_before(LinkedListNode *loc, LinkedListNode *node);
 
