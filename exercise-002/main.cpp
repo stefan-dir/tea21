@@ -41,14 +41,14 @@ auto main(int argc, char **argv) -> int
      */
 
     // https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
-    std::random_device rd;   // a seed source for the random number engine
-    std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
+    std::random_device randomDevice;   // a seed source for the random number engine
+    std::mt19937 gen(randomDevice());  // mersenne_twister_engine seeded with randomDevice()
     std::uniform_int_distribution<> distrib(1, 100);
 
     // Use a range based for loop to fill the vector
     // See https://en.cppreference.com/w/cpp/language/range-for
-    for (auto& i : data) {
-        i = distrib(gen);
+    for (auto& value : data) {
+        value = distrib(gen);
     }
 
     /*
@@ -66,9 +66,9 @@ auto main(int argc, char **argv) -> int
      * Das heißt die niedrigste Zahl zuerst. Das Ergebnis soll 
      * ebenfalls ausgegeben werden.
      */
-    auto start = std::chrono::system_clock::now();
+    auto start{std::chrono::system_clock::now()};
     std::sort(data.begin(),data.end(),std::greater<>());
-    auto end = std::chrono::system_clock::now();
+    auto end{std::chrono::system_clock::now()};
 
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
     fmt::print("The sorted vector:\n[{}]\n", fmt::join(data, ", "));
