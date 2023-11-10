@@ -38,34 +38,6 @@ git push -u origin solution-003
 
 Nun haben Sie den branch `main` aus meinem Repository in Ihren Fork übertragen.
 
-
-## Der erste Commit
-
-Um den ``git Workflow`` zu testen korrigieren Sie zunächst den [Schreibfehler in Zeile 11](exercise-002/main.cpp#L11).
-
-### Änderungen in den Staging Bereich aufnehmen
-
-Zum hinzufügen der Änderungen in den Staging Bereich nutzen Sie das Kommando ``git add -p``
-
-### Übertragen der Änderungen in das lokale Repository
-
-Das Übertragen oder auch ``commit`` genannt wird mit dem Kommando ``git commit`` durchgeführt. Sollte eine kurze commit Nachricht ausreichen können Sie dies direkt auf der Kommandozeile durchführen.
-
-```
-git commit -m "Fix typo in exercise-002"
-```
-
-### Übertragen der Änderungen in Ihren Fork
-
-Damit diese Änderungen in Ihrem eigenen Fork sichtbar sind müssen diese gepusht werden.
-
-```
-git push -u origin solution-003
-```
-
-Nach der Übertragung können Sie im Web-Interface testen ob diese Änderung erfolgreich übernommen wurden.
-
-
 # Aufgabenstellung
 
 Implementieren Sie die fehlenden Code Teile
