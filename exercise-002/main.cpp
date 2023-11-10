@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <fmt/chrono.h>
 #include <fmt/format.h>
+#include <random>
 
 #include "CLI/CLI.hpp"
 #include "config.h"
@@ -37,13 +38,26 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+
+    std::random_device rd; // Only used once to initialise (seed) engine
+    std::mt19937 rng(rd()); // Random-number engine used (Mersenne-Twister in this case)
+    std::uniform_int_distribution<int> uni(1,100); // Guaranteed unbiased
+
+    auto random_integer = uni(rng);
     for (auto& i : data){
-        i = std::rand() % 101;
+        i = uni(rng);
     }
-    fmt::print("Content of data: [{}]\n",fmt::join(data,", "));
+    fmt::print("contents of data: [{}]\n",fmt::join(data,", ")); 
+
+    auto start = std::chrono::system_clock::now();
 
     std::sort(data.begin(), data.end());
+
+    auto end = std::chrono::system_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
     fmt::print("sorted data: [{}]\n",fmt::join(data,", "));
+    fmt::print("sorting time in us: {}", elapsed);
 
     return 0; /* exit gracefully*/
 }
