@@ -18,7 +18,7 @@ Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des 
 
 ```
 git fetch --all
-git checkout -b solution-003 upstream/main
+git checkout -b solution-003 upstream/exercise-003
 ```
 
 Sie können mit dem Kommando ``git branch -a`` prüfen ob dies erfolgreich war:
