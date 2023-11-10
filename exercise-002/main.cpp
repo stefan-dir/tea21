@@ -6,6 +6,9 @@
 #include "CLI/CLI.hpp"
 #include "config.h"
 
+#include <random>
+#include <chrono>
+
 auto main(int argc, char **argv) -> int
 {
     auto count = 20;
@@ -28,15 +31,47 @@ auto main(int argc, char **argv) -> int
     }
     std::vector<int> data(count);
 
+    
     fmt::print("Created a vector with {} elements\n",data.size());
-    /**
-     * The {fmt} lib is a cross platform library for printing and formatting text
-     * it is much more convenient than std::cout and printf
-     * More info at https://fmt.dev/latest/api.html
+
+    /*
+     * Den Zufall einordnen
+     * Erstellen Sie einen ``std::vector`` mit der Größe von ``count`` 
+     * und füllen diesen mit zufälligen Werten von 1-100.
      */
-    fmt::print("Hello, {}!\n", app.get_name());
 
-    /* INSERT YOUR CODE HERE */
+    // https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
+    std::random_device rd;   // a seed source for the random number engine
+    std::mt19937 gen(rd());  // mersenne_twister_engine seeded with rd()
+    std::uniform_int_distribution<> distrib(1, 100);
 
+    // Use a range based for loop to fill the vector
+    // See https://en.cppreference.com/w/cpp/language/range-for
+    for (auto& i : data) {
+        i = distrib(gen);
+    }
+
+    /*
+     * Zeig es mir Baby
+     * Damit Sie den Zufall kennen müssen Sie Ihn ausgeben können. 
+     * Verwenden Sie hierzu die ``{fmt}`` Bibliothek und erstellen 
+     * Sie eine Funktion um den Vektor auszugeben.
+     */
+
+    fmt::print("The vector:\n[{}]\n", fmt::join(data, ", "));
+
+    /*
+     * Der Zufall in geordneten Bahnen
+     * Sortieren Sie nun den Vector der Reihe nach.
+     * Das heißt die niedrigste Zahl zuerst. Das Ergebnis soll 
+     * ebenfalls ausgegeben werden.
+     */
+    auto start = std::chrono::system_clock::now();
+    std::sort(data.begin(),data.end(),std::greater<>());
+    auto end = std::chrono::system_clock::now();
+
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    fmt::print("The sorted vector:\n[{}]\n", fmt::join(data, ", "));
+    fmt::print("The sorting took {}\n", elapsed);
     return 0; /* exit gracefully*/
 }
