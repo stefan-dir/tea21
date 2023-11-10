@@ -17,14 +17,14 @@ Aller Anfang ist schwer. Um sich das Leben nicht unnötig schwer zu machen sollt
 Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des Branches für die erste Übungsaufgabe.
 
 ```
-git checkout -b solution-001 upstream/main
+git checkout -b solution-002 upstream/main
 ```
 
 Sie können mit dem Kommando ``git branch -a`` prüfen ob dies erfolgreich war:
 
 ```
   master
-* solution-001
+* solution-002
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
   remotes/upstream/master
@@ -32,7 +32,7 @@ Sie können mit dem Kommando ``git branch -a`` prüfen ob dies erfolgreich war:
 Damit Sie nicht aus versehen in das falsche Repository pushen müssen Sie git mitteilen, dass Sie ab jetzt in Ihren fork pushen wollen:
 
 ```
-git push -u origin solution-001
+git push -u origin solution-002
 ```
 
 Nun haben Sie den branch `main` aus meinem Repository in Ihren Fork übertragen.
@@ -51,7 +51,7 @@ Zum hinzufügen der Änderungen in den Staging Bereich nutzen Sie das Kommando `
 Das Übertragen oder auch ``commit`` genannt wird mit dem Kommando ``git commit`` durchgeführt. Sollte eine kurze commit Nachricht ausreichen können Sie dies direkt auf der Kommandozeile durchführen.
 
 ```
-git commit -m "Fix typo in exercise-001"
+git commit -m "Fix typo in exercise-002"
 ```
 
 ### Übertragen der Änderungen in Ihren Fork
@@ -59,7 +59,7 @@ git commit -m "Fix typo in exercise-001"
 Damit diese Änderungen in Ihrem eigenen Fork sichtbar sind müssen diese gepusht werden.
 
 ```
-git push -u origin solution-001
+git push -u origin solution-002
 ```
 
 Nach der Übertragung können Sie im Web-Interface testen ob diese Änderung erfolgreich übernommen wurden.
