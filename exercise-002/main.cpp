@@ -1,6 +1,5 @@
-#include <stdlib.h>
 #include <fmt/chrono.h>
-#include <fmt/format.h>
+#include<fmt/format.h>
 #include <random>
 
 #include "CLI/CLI.hpp"
