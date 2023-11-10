@@ -5,7 +5,8 @@
 #include "config.h"
 
 auto main(int argc, char **argv) -> int
-{
+{   
+    auto counter = 20;
     /**
      * CLI11 is a command line parser to add command line options
      * More info at https://github.com/CLIUtils/CLI11#usage
@@ -14,12 +15,18 @@ auto main(int argc, char **argv) -> int
     try
     {
         app.set_version_flag("-V,--version", fmt::format("{} {}", PROJECT_VER, PROJECT_BUILD_DATE));
+        app.add_option("-c,--count", counter, fmt::format("counter with default value: {}", counter));
         app.parse(argc, argv);
     }
     catch (const CLI::ParseError &e)
     {
         return app.exit(e);
     }
+
+    std::vector<int> data(counter);
+    fmt::print("counter param: {}", counter);
+    fmt::print("created a vector with...{}", sizeof(data));
+
 
     /**
      * The {fmt} lib is a cross platform library for printing and formatting text
@@ -29,6 +36,9 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+   
+   
 
+   
     return 0; /* exit gracefully*/
 }
