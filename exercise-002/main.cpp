@@ -38,11 +38,10 @@ auto main(int argc, char **argv) -> int
 
     /* INSERT YOUR CODE HERE */
 
-    std::random_device rd; // Only used once to initialise (seed) engine
-    std::mt19937 rng(rd()); // Random-number engine used (Mersenne-Twister in this case)
+    std::random_device rand_dev; // Only used once to initialise (seed) engine
+    std::mt19937 rng(rand_dev()); // Random-number engine used (Mersenne-Twister in this case)
     std::uniform_int_distribution<int> uni(1,100); // Guaranteed unbiased
 
-    auto random_integer = uni(rng);
     for (auto& i : data){
         i = uni(rng);
     }
