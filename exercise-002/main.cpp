@@ -1,6 +1,8 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
+#include <vector>
+
 #include "CLI/CLI.hpp"
 #include "config.h"
 
