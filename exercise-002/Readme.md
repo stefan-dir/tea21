@@ -14,9 +14,10 @@ Aller Anfang ist schwer. Um sich das Leben nicht unnötig schwer zu machen sollt
 
 ## Anlegen der Branches
 
-Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des Branches für die erste Übungsaufgabe.
+Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des Branches für die erste Übungsaufgabe. Zunächst müssen wir allerdings die lokale Kopie unseres Repository mit `upstream` und Ihrem `origin` synchronisieren.  
 
 ```
+git fetch --all
 git checkout -b solution-002 upstream/main
 ```
 
