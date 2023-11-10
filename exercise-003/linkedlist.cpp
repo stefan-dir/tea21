@@ -14,7 +14,12 @@ bool LinkedList::insert_tail(LinkedListNode *node)
   if (nullptr == node) {
     return ret;
   }
-  // insert your code here....
+  else {
+  LinkedList::m_tail->pNext = node;
+  LinkedList::m_tail = node;
+  ret = true;
+  }
+  
   return ret;
 }
 
@@ -25,6 +30,11 @@ bool LinkedList::insert_head(LinkedListNode *node)
     return ret;
   }
   // insert your code here....
+  else {
+    node->pNext = LinkedList::m_head;
+    LinkedList::m_head = node;
+    ret = true;
+  }
   return ret;
 }
 
@@ -34,7 +44,9 @@ bool LinkedList::insert_after(LinkedListNode *loc, LinkedListNode *node)
   if ((nullptr == loc) || (nullptr == node)) {
     return ret;
   }
-  // insert your code here ....
+  con = loc->pNext
+  loc->pNext = node;
+  node->pNext =
   return ret;
 }
 
