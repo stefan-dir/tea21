@@ -16,6 +16,9 @@ Aller Anfang ist schwer. Um sich das Leben nicht unnötig schwer zu machen sollt
 
 Bevor Sie anfangen Quellcode zu schreiben erzeugen sie zunächst eine Kopie des Branches für die erste Übungsaufgabe. Zunächst müssen wir allerdings die lokale Kopie unseres Repository mit `upstream` und Ihrem `origin` synchronisieren.  
 
+
+![image](/doc/exercise-003.gif)
+
 ```
 git fetch --all
 git checkout -b solution-003 upstream/exercise-003
