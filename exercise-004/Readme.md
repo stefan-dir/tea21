@@ -1,4 +1,4 @@
-# Übungsaufgabe Nr. 3
+# Übungsaufgabe Nr. 4
 
 Bevor Sie mit der Bearbeitung der ersten Übungsaufgabe starten wollen wir zunächst Ihre ``git`` Kenntnisse weiter vertiefen. In den letzten Vorlesung Terminen haben Sie das Konzept der verschiedenen remotes kennengelernt. Dies wollen wir nun vertiefen.
 
@@ -41,11 +41,28 @@ Nun haben Sie den branch `main` aus meinem Repository in Ihren Fork übertragen.
 
 ## Aufgabenstellung
 
-Implementieren Sie die fehlenden Code Teile
+Implementieren Sie eine Klasse zum Umgang mit BMP Dateien. Diese Klasse soll mindestens über die folgenden Methoden verfügen:
 
 ```cpp
-// insert your code here....
+class BMP {
+    bool read(const std::string&  filename);
+    bool write(const std::string&  filename);
+};
 ```
+
+Eine detaillierte Beschreibung des BMP Dateiformates finden Sie auf [Wikipedia](https://de.wikipedia.org/wiki/Windows_Bitmap)
+Zum Lesen und Schreiben der Daten verwenden Sie die `iostream` Bibliothek aus der standard C++ Library. Ein tutorial hierzu finden Sie unter folgender Webseite: https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
+
+Erzeugen Sie Sich zuerst eine Struktur für den `BITMAPFILEHEADER` und für den `BITMAPINFOHEADER` verwenden Sie die Integer Datentypen aus dem Header ``cstdint``.
+
+Die zu verarbeitende Datei ist mittels Kommandozeilen Parameter und der Bibliothek ``CLI11`` zu übergeben. Im Debugger können Sie einen Default Wert benutzen.
+
+Implementieren Sie nun die folgenden Funktionen:
+
+- Konvertierung in ein Grauwert-Bild
+- Ausgabe des Grauwert Bildes in [Monochromes ASCII-Art](https://de.wikipedia.org/wiki/ASCII-Art#Automatische_Erstellung) und Speicherung in eine Datei
+- Implementieren Sie einen [Schwellwertfilter](https://de.wikipedia.org/wiki/Schwellenwertverfahren)
+
 
 ## Nach getaner Arbeit
 
@@ -54,5 +71,7 @@ Haben Sie alle Punkte erfolgreich abgearbeitet erstellen Sie einen Pull-Request 
 ## Lernziele
 
 - Vertiefung der git Kenntnisse
-- Umgang mit Verkettenlisten
 - Umgang mit der ``{fmt}`` Bibliothek
+- Umgang mit der `CLI11` Bibliothek
+- Einlesen und verarbeiten von Dateiformaten
+- Einfache Bildverarbeitung
