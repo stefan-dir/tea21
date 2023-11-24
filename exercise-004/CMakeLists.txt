@@ -15,6 +15,11 @@ find_package(nlohmann_json REQUIRED)
 find_package(CLI11 CONFIG REQUIRED)
 find_package(Catch2 3 REQUIRED)
 
+# use some fancy hack to provide a default input file for debugging
+set(DEFAULT_BMP_FILE "${CMAKE_CURRENT_BINARY_DIR}/input.bmp")
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/example/DHBW_24bit.bmp" ${DEFAULT_BMP_FILE} COPYONLY)
+
+# create the config header which conveys CMake information to C++
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in" "${CMAKE_CURRENT_BINARY_DIR}/include/config.h" @ONLY)
 include_directories("${CMAKE_CURRENT_BINARY_DIR}/include") # add the output path to the include PATH
 

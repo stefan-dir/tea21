@@ -1,11 +1,24 @@
 #ifndef CONFIG_H_IN
 #define CONFIG_H_IN
 
+#include <string>
+#include <string_view>
+
 constexpr auto PROJECT_NAME {"@PROJECT_NAME@"};
 constexpr auto PROJECT_VER  {"@PROJECT_VERSION@"};
 constexpr auto PROJECT_VER_MAJOR {"@PROJECT_VERSION_MAJOR@"};
 constexpr auto PROJECT_VER_MINOR {"@PROJECT_VERSION_MINOR@"};
 constexpr auto PTOJECT_VER_PATCH {"@PROJECT_VERSION_PATCH@"};
 constexpr auto PROJECT_BUILD_DATE {"@BUILD_DATE@"};
+
+// Get the Path to the example file
+// On Windows a typical PATH would look like C:\Users\blub\input.bmp
+// Due to the fact a "\" in a C++ string is an escape sequence one would
+// need to define the filename like this "C:\\Users\\blub\\input.bmp"
+// To avoid such thing and to allow the automatic handling we do use raw string literals
+// https://en.cppreference.com/w/cpp/language/string_literal
+// Everything between `R"???(` and `)???"` is not escaped
+// I used the sequence `???` as a delimeter cause `?` is not an valid character for a filename in both Linux and windows
+constexpr auto DEFAULT_BMP_FILE {R"???(@DEFAULT_BMP_FILE@)???"};
 
 #endif // CONFIG_H_IN
