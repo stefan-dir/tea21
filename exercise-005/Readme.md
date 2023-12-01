@@ -43,3 +43,24 @@ Implementieren Sie einen Garagentorantrieb welcher über die folgende Sensorik v
 
 - Endschalter oben/unten
 - Fernbedienung mit einer Taste
+
+## State Diagram
+
+```mermaid
+stateDiagram-v2
+    Open: Door is open
+    Closed: Door is closed
+    Up: Moving up
+    Down: Moving down
+    StopUp: Door stopped while moving up
+    StopDown: Door stopped while moving down
+    [*] --> Up
+    Up --> StopUp : Button pressed
+    StopUp --> Down : Button pressed
+    Down --> Closed : Closing switch
+    Closed --> Up : Button pressed
+    Up --> Open: Opening Switch
+    Open --> Down: Button pressed
+    StopDown --> Up: Button pressed
+    Down --> StopDown: Button pressed
+```
