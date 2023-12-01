@@ -46,6 +46,8 @@ Implementieren Sie einen Garagentorantrieb welcher über die folgende Sensorik v
 
 ## State Diagram
 
+Based on a [mermaid diagram](https://mermaid.js.org/intro/).
+
 ```mermaid
 stateDiagram-v2
     Open: Garagentor offen
